@@ -1,0 +1,278 @@
+/* ---------- Global Styles ---------- */
+:root {
+  --primary-color: #387ed1;
+  --primary-dark: #2f6bbf;
+  --text-color: #555;
+  --bg-light: #f8f9fa;
+}
+
+html {
+  scroll-behavior: smooth; /* ✅ Smooth scroll for anchor links */
+}
+
+body {
+  margin: 0;
+   padding-top: 80px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: var(--bg-light); /* ✅ Clean light background */
+  color: var(--text-color);
+}
+
+/* ✅ Reusable container */
+.container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 0 20px;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+/* ---------- Navbar ---------- */
+.nav-link {
+  margin-left: 40px;
+  position: relative;
+  color: black;
+  text-decoration: none;
+}
+
+/* ✅ Link hover underline animation */
+.nav-link::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  left: 0;
+  bottom: -5px;
+  background-color: var(--primary-color);
+  transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+/* ---------- Support Hero Section ---------- */
+#supportHero {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 40px 0;
+}
+
+#supportHero a {
+  color: white;
+  text-decoration: none;
+}
+
+#supportWrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 150px;
+  gap: 40px;
+}
+
+#supportHero input {
+  padding: 20px 50px;
+  width: 100%;
+  font-size: 20px;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+/* ✅ Input focus effect */
+#supportHero input:focus {
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.8);
+}
+
+/* ---------- Hero Section ---------- */
+.hero-section {
+  overflow: hidden;
+  text-align: center;
+  padding: 60px 20px;
+  background-color: white;
+  animation: fadeIn 1s ease; /* ✅ Smooth fade-in animation */
+}
+
+.hero-section img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto 40px;
+  object-fit: contain;
+}
+
+.hero-section h1 {
+  font-size: 2.5rem;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+.hero-section p {
+  font-size: 1.2rem;
+  color: var(--text-color);
+  margin-bottom: 30px;
+}
+
+.hero-section button,
+.hero-section a.btn {
+  background-color: var(--primary-color);
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 12px 30px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+/* ✅ Button hover pop effect */
+.hero-section button:hover,
+.hero-section a.btn:hover {
+  background-color: var(--primary-dark);
+  transform: translateY(-2px);
+}
+
+/* ---------- Scroll-to-top Button ---------- */
+#scrollTopBtn {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  padding: 12px 15px;
+  font-size: 18px;
+  cursor: pointer;
+  display: none; /* hidden by default */
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+#scrollTopBtn:hover {
+  background-color: var(--primary-dark);
+  transform: scale(1.1);
+}
+
+/* ---------- Fade-in Animation ---------- */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ---------- Responsive Fixes ---------- */
+@media (max-width: 992px) {
+  #supportWrapper {
+    flex-direction: column;
+    margin: 0 30px;
+    text-align: center;
+  }
+
+  .hero-section h1 {
+    font-size: 2rem;
+  }
+
+  .hero-section p {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 576px) {
+  #supportHero input {
+    padding: 15px 20px;
+    font-size: 16px;
+  }
+
+  .hero-section {
+    padding: 40px 15px;
+  }
+
+  .hero-section h1 {
+    font-size: 1.7rem;
+  }
+}
+
+/* ---------- Signup Page Styles ---------- */
+.signup-card {
+  background-color: #fff;
+  border-radius: 15px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+  padding: 40px 30px;
+  max-width: 450px;
+  width: 100%;
+  margin: 50px auto;
+  animation: fadeIn 0.8s ease-in-out;
+}
+
+.signup-card h2 {
+  color: var(--primary-color);
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.signup-card p {
+  color: var(--text-color);
+  font-size: 0.95rem;
+}
+
+.signup-card .form-control {
+  border-radius: 8px;
+  padding: 12px;
+  border: 1px solid #ccc;
+  transition: all 0.3s ease;
+}
+
+.signup-card .form-control:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 5px rgba(56, 126, 209, 0.4);
+}
+
+.signup-card button {
+  width: 100%;
+  background-color: var(--primary-color);
+  border: none;
+  color: #fff;
+  padding: 12px;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.signup-card button:hover {
+  background-color: var(--primary-dark);
+  transform: translateY(-2px);
+}
+
+.signup-card a {
+  color: var(--primary-color);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.signup-card a:hover {
+  color: var(--primary-dark);
+  text-decoration: underline;
+}
+
+/* ---------- Responsive Signup Card ---------- */
+@media (max-width: 576px) {
+  .signup-card {
+    padding: 30px 20px;
+    margin: 30px 15px;
+  }
+}

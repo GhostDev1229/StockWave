@@ -1,0 +1,71 @@
+/* Team.css */
+
+/* Main section container */
+.team-section {
+  padding: 60px 20px;
+  background-color: #f9f9f9;
+}
+
+/* Section heading */
+.team-heading {
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 50px;
+  color: #222;
+}
+
+/* Gradient text used in names and highlights */
+.gradient-text {
+  background: linear-gradient(90deg, #387ed1, #00b4d8);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Team member card */
+.team-member {
+  margin-bottom: 30px;
+}
+
+/* Text content for team member (right column) */
+.team-member p {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: #555;
+  margin-bottom: 15px;
+}
+
+/* Social / external links */
+.team-links a {
+  color: #387ed1;
+  font-weight: 500;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.team-links a:hover {
+  text-decoration: underline;
+}
+
+/* Rounded image with shadow */
+.team-member img {
+  border-radius: 50%;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  margin-bottom: 20px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .team-heading {
+    font-size: 2rem;
+  }
+
+  .team-member {
+    text-align: center;
+  }
+
+  .team-member img {
+    width: 60%;
+    max-width: 200px;
+  }
+}
